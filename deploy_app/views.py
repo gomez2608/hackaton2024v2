@@ -7,15 +7,11 @@ import json
 import pickle
 import google.generativeai as genai
 import os
-from os.path import join, dirname
-from dotenv import load_dotenv
 import numpy as np
 import pandas as pd
 
 region_model = pickle.load(open(os.path.join("","model.pkl"), 'rb'))
 
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
 
 GEMINI_KEY = os.environ.get("GEMINI_KEY")
 genai.configure(api_key=GEMINI_KEY)
